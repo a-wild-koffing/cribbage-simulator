@@ -67,12 +67,18 @@ public class Card implements Comparable<Card>{
 	public int getValue() {
 		return this.value;
 	}
+	
+	public void printCard() {
+		System.out.println("Card #: " + this.deckIndex + "\tSuit: " + this.suit 
+				+ "\t\tName: " + this.name + "\nOrdinal: " + this.ordinal 
+				+ "\tValue: " + this.value);
+	}
 
 	@Override
 	public int compareTo(Card arg0) {
-		if(this.deckIndex < arg0.deckIndex)
+		if(this.ordinal > arg0.ordinal)
 			return 1;
-		else if(this.deckIndex > arg0.deckIndex)
+		else if(this.ordinal < arg0.ordinal)
 			return -1;
 		return 0;
 	}
